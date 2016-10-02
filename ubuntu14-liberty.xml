@@ -1,0 +1,58 @@
+<manifest>
+<remote name="github" fetch="https://github.com/Juniper"/>
+<contrail>
+<!-- This section is used for package naming -->
+<!-- project is not used today just there documentation. -->
+<label name="project" value="ubuntu-14-04" />
+<label name="sku" value="liberty" />
+<label name="branch" value="mainline" />
+<label name="NO-SANITY" value="mainline" />
+</contrail>
+
+<default revision="refs/heads/master" remote="github"/>
+
+<project name="contrail-build" remote="github" path="tools/build">
+  <copyfile src="SConstruct" dest="SConstruct"/>
+</project>
+<project name="contrail-controller" remote="github" path="controller"/>
+<project name="contrail-vrouter" remote="github" path="vrouter"/>
+<project name="contrail-third-party" remote="github" path="third_party"/>
+<project name="contrail-f5" remote="github" path="contrail-f5"/>
+<project name="contrail-generateDS" remote="github" path="tools/generateds"/>
+<project name="contrail-sandesh" remote="github" path="tools/sandesh"/>
+<project name="contrail-nova-vif-driver" remote="github" path="openstack/nova_contrail_vif"/>
+<project name="contrail-nova-extensions" remote="github" revision="contrail_juno" path="openstack/contrail-nova-extensions"/>
+<project name="contrail-packaging" remote="github" path="tools/packaging"/>
+<project name="contrail-packages" remote="github" path="tools/packages"/>
+<project name="contrail-provisioning" remote="github" path="tools/provisioning"/>
+<project name="contrail-distro-third-party" remote="github" path="distro"/>
+<project name="contrail-web-storage" remote="github" path="contrail-web-storage"/>
+<project name="contrail-web-controller" remote="github" path="contrail-web-controller"/>
+<project name="contrail-web-core" remote="github" path="contrail-web-core"/>
+<project name="contrail-webui-third-party" remote="github" path="contrail-webui-third-party"/>
+<project name="contrail-fabric-utils" remote="github" path="third_party/fabric-utils" />
+<project name="contrail-test" remote="github" path="third_party/contrail-test" />
+<project name="contrail-server-manager" remote="github" path="tools/contrail-server-manager" />
+<project name="contrail-web-server-manager" remote="github" path="contrail-web-server-manager"/>
+<project name="contrail-puppet" remote="github" path="tools/puppet" />
+<project name="contrail-dpdk" remote="github" revision="cd33f3a42ec97f1e6d4a0f3fe45043d01f462abd" path="third_party/dpdk"/>
+<project name="contrail-test-ci" remote="github" path="tools/contrail-test-ci"/>
+<project name="ukai" remote="github" path="ukai"/>
+
+<project name="nova" remote="github" revision="contrail/liberty_12_0_1" path="distro/openstack/nova" />
+<project name="contrail-neutron-plugin" remote="github" path="openstack/neutron_plugin" />
+<project name="python-neutronclient" remote="github" revision="contrail/liberty-3.1.0" path="distro/openstack/python-neutronclient" />
+<project name="contrail-heat" remote="github" path="openstack/contrail-heat" />
+<project name="contrail-ceilometer-plugin" remote="github" revision="contrail/liberty" path="openstack/ceilometer_plugin" />
+<project name="contrail-horizon" remote="github" revision="contrail/Liberty-8.0.0" path="contrail-horizon"/>
+
+<project name="contrail-controller" remote="github" path="tools/packaging/common/debian/vcenter-plugin/controller"/>
+<project name="contrail-generateDS" remote="github" path="tools/packaging/common/debian/vcenter-plugin/generateds"/>
+<project name="vijava" remote="github" path="tools/packaging/common/debian/vcenter-plugin/vijava"/>
+<project name="contrail-java-api" remote="github" path="tools/packaging/common/debian/vcenter-plugin/java-api"/>
+<project name="contrail-vrouter-java-api" remote="github" path="tools/packaging/common/debian/vcenter-plugin/vrouter-java-api"/>
+<project name="contrail-vcenter-plugin" remote="github" path="tools/packaging/common/debian/vcenter-plugin/vcenter-plugin">
+  <copyfile src="Makefile.install-package" dest="tools/packaging/common/debian/vcenter-plugin/Makefile"/>
+</project>
+
+</manifest>
